@@ -1,0 +1,29 @@
+base_directory: ""
+csv_files:
+  - ""
+value_column_name: #Column that container volumne to analyze
+  - ""
+export_column_name: #Optional
+  - "" #Conlumn that require to export along with analyzed data
+
+#Optional
+output_config:
+  print_output: false
+  write_output:
+    - output_dir: ""
+      format: csv
+    - output_dir: ""
+      format: json
+      
+stats_config:
+  #require_data must be provide at least 1 stats
+  percentiles:
+    - 25
+    - 50
+    - 75
+    - 90
+  min: false
+  max: false
+  std: false
+  cov: false
+  avg: false

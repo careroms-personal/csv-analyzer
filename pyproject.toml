@@ -13,6 +13,8 @@ dependencies = [
   "pydantic==2.12.5",
   "PyYAML==6.0.3",
   "setuptools==80.10.2",
+  "pytest==9.0.2",
+  "pandas==3.0.1",
 ]
 
 [tool.setuptools.packages.find]
