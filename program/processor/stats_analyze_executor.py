@@ -42,7 +42,6 @@ class StatsAnalyzeExecutor:
 
       execute_result[file] = pd.DataFrame(results)
 
-    print(execute_result)
     return execute_result
 
   def execute(self):
