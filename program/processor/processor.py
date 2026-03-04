@@ -6,6 +6,8 @@ from pydantic import ValidationError
 from .stats_analyze_executor import StatsAnalyzeExecutor
 from models.analyzer_config_models import *
 
+from .output_exporter import OutputExecutor
+
 class Processor:
   def __init__(self, config_path: str):
     self._load_and_validate_config(config_path=config_path)
@@ -31,3 +33,5 @@ class Processor:
     self.stats_analyze_executor = StatsAnalyzeExecutor(self.analyzer_config)
     self.stats_analyzed_result = self.stats_analyze_executor.execute()
     
+    self.output_executor = OutputExecutor(self.stats_analyzed_result, self.analyzer_config.output_config)
+    self.output_executor.execute()
